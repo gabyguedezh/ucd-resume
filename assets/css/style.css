@@ -203,3 +203,16 @@ footer .cv-pdf i:hover {
 #footer-details {
     margin: 20px;
 }
+
+
+/* THREE REASONS */
+
+.three-reasons-icon {
+    font-size: 26px;
+    color: #e67e22;
+}
+
+.three-reasons-heading {
+    margin-bottom: 15px;
+    
+}
