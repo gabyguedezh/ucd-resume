@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rosie Odenkirk</title>
-
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.css"/>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.css"/>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.Default.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
-
 <body>
     <header class="container-fluid">
         <div class="row">
@@ -58,7 +58,7 @@
                         <h3 class="section-heading uppercase">Conferences and Meetups attended</h3>
                     </div>
                 </div>  
-                <div id="map"></div>
+                <div id="map" style="width:400px; height:400px;"></div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-8 bg-color-groups section-column">
                 <div class="row">
@@ -128,7 +128,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -163,45 +162,34 @@
     <script>
         var APIKey = "d0bP1mYxiEbbncaGjLFmwzEk3479TA1k";
     </script>
-    
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.css"/>
     <script src="https://unpkg.com/leaflet.markercluster@1.0.6/dist/leaflet.markercluster.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.css"/>
-    <link type="text/css" rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.Default.css"/>
-    
     <script type="text/javascript">
       window.onload = function() {
         L.mapquest.key = 'd0bP1mYxiEbbncaGjLFmwzEk3479TA1k';
         var baseLayer = L.mapquest.tileLayer('map');
-
         var map = L.mapquest.map(document.getElementById("map"), {
           center: L.latLng(-37.82, 175.24),
           layers: baseLayer,
           zoom: 13
         });
-
         var addressPoints = [
           [-37.8210922667, 175.2209316333, "2"],
           [-37.81797515, 175.2186312, "3"]
         ];
-
-        // var markers = L.markerClusterGroup();
-
-        // for (var i = 0; i < addressPoints.length; i++) {
-        //   var addressPoint = addressPoints[i];
-        //   var title = addressPoint[2];
-        //   var marker = L.marker(new L.LatLng(addressPoint[0], addressPoint[1]), {
-        //     title: title,
-        //     icon: L.mapquest.icons.marker()
-        //   });
-        //   marker.bindPopup(title);
-        //   markers.addLayer(marker);
-        // }
-
-        // map.addLayer(markers);
+        var markers = L.markerClusterGroup();
+        for (var i = 0; i < addressPoints.length; i++) {
+           var addressPoint = addressPoints[i];
+           var title = addressPoint[2];
+           var marker = L.marker(new L.LatLng(addressPoint[0], addressPoint[1]), {
+             title: title,
+             icon: L.mapquest.icons.marker()
+           });
+           marker.bindPopup(title);
+           markers.addLayer(marker);
+         }
+         map.addLayer(markers);
       };
     </script>
 </body>
-
 </html>
