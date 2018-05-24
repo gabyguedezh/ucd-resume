@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|exo:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
 
-/* COLOR */
+/*--------------------------------------------Colors*/
 
 .bg-color-name-title {
     background-color: #676767;
 }
 
 .bg-color-three-reasons {
-    background-color: #ffffff
+    background-color: #ffffff;
 }
 
 .bg-color-personal-info {
@@ -23,7 +23,15 @@
 }
 
 .bg-color-contact {
- background-color: #ffffff;   
+    background-color: #ffffff;
+}
+
+.bg-color-conferences {
+    background-color: #f4f4f4;
+}
+
+.bg-color-groups {
+    background-color: #ffffff;
 }
 
 .ui-menu-color-home {
@@ -39,11 +47,30 @@
 }
 
 .ui-menu-color-download {
-    background-color: #525252;
+    background-color: #d9a81d;
 }
 
 
-/* SPECIAL PADDINGS/MARGINS/TEXT */
+.ui-menu-color-github {
+    background-color: #1c4a6c;
+}
+
+.ui-menu-color-interests {
+    background-color: #e74c3c;
+}
+
+
+
+
+body {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    background-color: #525252;
+    color: #555555;
+}
+
+
+/*--------------------------------------------Special Paddings/Margins/Text*/
 
 h1,
 h2,
@@ -57,7 +84,7 @@ h4 {
 }
 
 .general-sub {
-    font-family: "exo", sans-serif;
+    font-family: "Exo", sans-serif;
     font-weight: 300;
     color: #fafafa;
 }
@@ -66,22 +93,24 @@ h4 {
     display: inline-block;
 }
 
+
 .row-table {
     display: table;
 }
 
 .history-heading,
 .section-heading {
-    font-family: "exo", sans-serif;
+    font-family: "Exo", sans-serif;
     font-weight: 300;
     margin-top: 25px;
     margin-bottom: 40px;
 }
 
-/* HEADING */
+
+/*--------------------------------------------Heading*/
 
 header {
-    margin: 0px;
+    margin: 0;
 }
 
 .heading {
@@ -89,18 +118,18 @@ header {
 }
 
 .logo {
-    background-image: url("../images/rosie.jpg");
+    background: url("../images/rosie.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 360px;
-    transition: all, .5s, ease-in-out;
-    -moz-transition: all, .5s, ease-in-out;
-    -webkit-transition: all, .5s, ease-in-out;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
 }
 
 .name {
-    font-family: "exo", sans-serif;
+    font-family: "Exo", sans-serif;
     font-weight: 100;
     font-size: 46px;
     margin-top: 50px;
@@ -108,7 +137,7 @@ header {
 }
 
 .title {
-    font-family: "roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 200;
     font-size: 28px;
     margin-top: 20px;
@@ -137,11 +166,12 @@ header {
     height: 120px;
 }
 
+
 .menuitem a i {
     padding-top: 22px;
     display: block;
     color: #fafafa;
-    font-size: 26px !important;
+    font-size: 26px;
 }
 
 .menuitem span {
@@ -155,15 +185,16 @@ header {
     letter-spacing: 2px;
 }
 
-/* HOVER.CSS */
+
+/*--------------------------------------------Hover.css*/
 
 .hvr-sweep-to-bottom:before {
-    background: rgb(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     height: 120px;
 }
 
 
-/* FOOTER */
+/*--------------------------------------------Footer*/
 
 footer {
     background-color: #525252;
@@ -181,10 +212,10 @@ footer .cv-pdf i {
 
 footer .cv-pdf i:hover {
     color: #e84610;
-    transition: all .35s ease-in-out;
-    -moz-transition: all .35s ease-in-out;
-    -webkit-transition: all .35s ease-in-out;
-    -o-transition: all .35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
 }
 
 .social-links {
@@ -201,10 +232,10 @@ footer .cv-pdf i:hover {
     text-align: center;
     color: #fafafa;
     background: #8f8f8f;
-    transition: all .35s ease-in-out;
-    -moz-transition: all .35s ease-in-out;
-    -webkit-transition: all .35s ease-in-out;
-    -o-transition: all .35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
 }
 
 .social-links li a i:hover {
@@ -215,8 +246,7 @@ footer .cv-pdf i:hover {
     margin: 20px;
 }
 
-
-/* THREE REASONS */
+/*--------------------------------------------Three Reasons*/
 
 .three-reasons-icon {
     font-size: 26px;
@@ -225,16 +255,19 @@ footer .cv-pdf i:hover {
 
 .three-reasons-heading {
     margin-bottom: 15px;
-
 }
 
-
-/* PERSONAL INFO */
+/*--------------------------------------------Personal Info*/
 
 .personal-info-item {
     margin-bottom: 20px;
     display: block;
     clear: both;
+}
+
+.personal-info-item .key,
+.personal-info-item .value {
+    padding-right: 8px;
 }
 
 .personal-info-item .key p,
@@ -248,7 +281,6 @@ footer .cv-pdf i:hover {
     margin-right: 21px;
     padding-top: 2px;
     vertical-align: top;
-
 }
 
 .personal-info-item .key p {
@@ -261,8 +293,7 @@ footer .cv-pdf i:hover {
     width: 60%;
 }
 
-
-/* SKILLS */
+/*--------------------------------------------Skills*/
 
 .progress {
     position: relative;
@@ -278,12 +309,13 @@ footer .cv-pdf i:hover {
     background-color: rgba(25, 25, 25, 0.2);
 }
 
+
 .progress-section {
     margin: 40px 20px;
 }
 
 
-/* WORK HISTORY */
+/*--------------------------------------------Work History*/
 
 .timeline-item {
     padding: 4em 2em 0em 2em;
@@ -298,12 +330,12 @@ footer .cv-pdf i:hover {
 }
 
 .timeline-item::before {
-    content: attr(dates);
+    content: attr(data-dates);
     position: absolute;
     left: 2.5em;
     top: 3em;
     display: block;
-    font-family: "exo", sans-serif;
+    font-family: "Exo", sans-serif;
     font-weight: 500;
     font-size: .8em;
     padding: 0;
@@ -331,15 +363,15 @@ footer .cv-pdf i:hover {
     margin-bottom: 30px;
 }
 
-
-/* CONTACT */
+/*--------------------------------------------Contact*/
 
 .contact-heading {
-    font-family: "exo", sans-serif;
+    font-family: "Exo", sans-serif;
     font-weight: 300;
     margin-top: 25px;
     margin-bottom: 20px;
 }
+
 
 .center-form {
     padding-top: 10px;
@@ -354,7 +386,7 @@ button[type="submit"] {
     color: #fafafa;
 }
 
-/* MEDIA QUERIES */
+/*--------------------------------------------Media Queries*/
 
 @media(min-width: 992px) {
     .section-column {
@@ -362,11 +394,11 @@ button[type="submit"] {
         float: none;
         display: table-cell;
     }
-}
 
-.center-form {
-    padding-top: 30px;
-    min-height: 240px;
-    margin: 0 auto;
-    max-width: 50%;
+    .center-form {
+        padding-top: 30px;
+        min-height: 240px;
+        margin: 0 auto;
+        max-width: 50%;
+    }
 }
